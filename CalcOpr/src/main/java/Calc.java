@@ -26,6 +26,7 @@ public class Calc  extends HttpServlet {
         char Op = operation.charAt(0);
 
         switch (Op){
+
             case '+': result= num1+num2;
             break;
             case '-': result= num1-num2;
@@ -35,6 +36,7 @@ public class Calc  extends HttpServlet {
             case '/': result= num1/num2;
             break;
             default: pr.println("please check operation!");
+
         }
 
         pr.println("<h2>Result: " + num1 + " " + Op + " " + num2 + " = " + result + "</h2>");

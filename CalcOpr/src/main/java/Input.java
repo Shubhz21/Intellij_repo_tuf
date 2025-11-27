@@ -17,19 +17,27 @@ public class Input extends HttpServlet {
 
         PrintWriter pr = response.getWriter();
 
-        pr.println("<html> <body>" +
+        pr.println("<html>" +
+                "<head>" +
+                "<style>" +
+                "" +
+                "</style>" +
+                "</head>" +
+                " <body>" +
                 "<br/>" +
                 "<form action='calc' >" +
-                "<label>first number:</label> <input type='text' name='v1'> <br/>" +
-                "<label>second number:</label> <input type='text' name='v2'> <br/>" +
+                "<label>first number:</label> <input type='text' name='v1' required> <br/><br/>" +
+                "<label>second number:</label> <input type='text' name='v2' required> <br/>" +
+                "<br/>" +
                 "<label>Operation:</label>" +
                 "<select name='operation'>" +
+                "<option value='Select'> select </option>" +
                 "<option value='+'> + </option>" +
                 "<option value='-'> - </option>" +
                 "<option value='*'> * </option>" +
                 "<option value='/'> / </option>" +
                 "</select>" +
-                "<br/>" +
+                "<br/><br/><br/>" +
                 "<input type='submit' value='Get Result'>" +
                 "</form>" +
                 "</body>    " +
