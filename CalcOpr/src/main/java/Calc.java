@@ -1,4 +1,6 @@
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebInitParam;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -6,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@WebServlet("/calc")
 public class Calc  extends HttpServlet {
 
 
@@ -23,35 +26,21 @@ public class Calc  extends HttpServlet {
         char Op = operation.charAt(0);
 
         switch (Op){
-            case '+': pr.println(result= num1+num2);
+            case '+': result= num1+num2;
             break;
-            case '-': pr.println(result= num1-num2);
+            case '-': result= num1-num2;
             break;
-            case '*': pr.println(result= num1*num2);
+            case '*': result= num1*num2;
             break;
-            case '/': pr.println(result= num1/num2);
+            case '/': result= num1/num2;
             break;
             default: pr.println("please check operation!");
         }
 
+        pr.println("<h2>Result: " + num1 + " " + Op + " " + num2 + " = " + result + "</h2>");
 
-        pr.println("<html> <body>" +
-                "<br/>" +
-                "<form action='/Code' method='service'>" +
-                "<label>first number:</label> <input type='text' name='v1'> <br/>" +
-                "<label>second number:</label> <input type='text' name='v2'> <br/>" +
-                "<label>Operation:</label>" +
-                "<select name='operation'>" +
-                "<option value='add'> + </option>" +
-                "<option value='sub'> - </option>" +
-                "<option value='mul'> * </option>" +
-                "<option value='div'> / </option>" +
-                "</select>" +
-                "<br/>" +
-                "<input type='submit' value='Get Result'>" +
-                "</form>" +
-                "</body>    " +
-                "</html>");
+
+
 
     }
 }
