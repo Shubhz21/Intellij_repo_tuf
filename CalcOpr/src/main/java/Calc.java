@@ -35,6 +35,8 @@ public class Calc  extends HttpServlet {
             break;
             case '/': result= num1/num2;
             break;
+            case '%': result= num1%num2;
+            break;
             default: pr.println("please check operation!");
 
         }

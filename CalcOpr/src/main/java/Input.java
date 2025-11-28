@@ -25,7 +25,7 @@ public class Input extends HttpServlet {
                 "</head>" +
                 " <body>" +
                 "<br/>" +
-                "<form action='calc' >" +
+                "<form action='calc'>" +
                 "<label>first number:</label> <input type='text' name='v1' required> <br/><br/>" +
                 "<label>second number:</label> <input type='text' name='v2' required> <br/>" +
                 "<br/>" +
@@ -36,6 +36,7 @@ public class Input extends HttpServlet {
                 "<option value='-'> - </option>" +
                 "<option value='*'> * </option>" +
                 "<option value='/'> / </option>" +
+                "<option value='%'> % </option>\"" +
                 "</select>" +
                 "<br/><br/><br/>" +
                 "<input type='submit' value='Get Result'>" +
